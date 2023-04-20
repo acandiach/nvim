@@ -1,5 +1,10 @@
 local set = vim.opt
 
+set.termguicolors = true
+set.background = "dark"
+set.signcolumn = "yes"
+set.colorcolumn = "120"
+
 set.encoding = "utf-8"
 set.showmode = false
 set.mouse = "a"
@@ -13,11 +18,6 @@ set.numberwidth = 1
 
 set.clipboard = "unnamedplus"
 -- set.clipboard:append("unnamedplus")
-
-set.termguicolors = true
-set.background = "dark"
-set.signcolumn = "yes"
-set.colorcolumn = "120"
 
 set.cursorline = true
 -- set.guicursor = ""
@@ -48,9 +48,10 @@ set.scrolloff = 10
 set.sidescrolloff = 4
 set.updatetime = 50
 
--- set.undodir = os.getenv("HOME") .. "/.vim/undodir"
--- set.undofile = true
+set.undodir = os.getenv("HOME") .. "/.cache/nvim/undodir"
+set.undofile = true
 
 set.smarttab = true
 set.breakindent = true
 -- set.backspace = "indent,eol,start"
+set.cmdheight = 1

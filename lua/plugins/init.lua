@@ -14,13 +14,6 @@ return {
 	},
 
 	{
-		"norcalli/nvim-colorizer.lua",
-		config = function()
-			require("colorizer").setup()
-		end,
-	},
-
-	{
 		"christoomey/vim-tmux-navigator",
 		keys = {
 			{ "<C-l>", "<cmd>TmuxNavigateRight<CR>", desc = "move cursor right" },

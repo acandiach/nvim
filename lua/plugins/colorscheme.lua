@@ -6,7 +6,7 @@ return {
 		config = function()
 			require("onedark").setup({
 				-- darker, warmer, dee-- Lua
-				style = "warmer",
+				style = "darker",
 			})
 			vim.cmd.colorscheme("onedark")
 		end,
@@ -33,7 +33,7 @@ return {
 		-- config = function()
 		-- 	require("tokyonight").setup({ style = "night" })
 		-- 	vim.cmd.colorscheme("tokyonight")
-		-- "moon", "storm" or "night"
+		-- 	-- "moon", "storm" or "night"
 		-- end,
 	},
 }
