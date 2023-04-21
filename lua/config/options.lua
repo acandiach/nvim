@@ -55,3 +55,6 @@ set.smarttab = true
 set.breakindent = true
 -- set.backspace = "indent,eol,start"
 set.cmdheight = 1
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1

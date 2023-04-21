@@ -66,8 +66,6 @@ return {
 			},
 		})
 
-		vim.g.loaded_netrw = 1
-		vim.g.loaded_netrwPlugin = 1
 		-- change color for arrows, folder and forlder name
 		vim.cmd([[ highlight NvimTreeIndentMarker guifg=#ACAAA4 ]])
 		vim.cmd([[ highlight NvimTreeFolderIcon guifg=#79756C ]])
