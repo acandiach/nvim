@@ -69,7 +69,7 @@ return {
 		-- change color for arrows, folder and forlder name
 		vim.cmd([[ highlight NvimTreeIndentMarker guifg=#ACAAA4 ]])
 		vim.cmd([[ highlight NvimTreeFolderIcon guifg=#79756C ]])
-		vim.cmd([[ highlight NvimTreeFolderName guifg=#B4B2AC ]])
+		vim.cmd([[ highlight NvimTreeFolderName guifg=#797272 ]])
 		vim.cmd([[ highlight NvimTreeOpenedFolderName guifg=#B4B2AC ]])
 
 		-- change color for git file for states

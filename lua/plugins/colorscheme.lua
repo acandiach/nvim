@@ -1,8 +1,9 @@
 ------Grubvox Material configuration------
-vim.g["gruvbox_material_background"] = "hard" -- "soft", "medium", "hard"
-vim.g["gruvbox_material_better_performance"] = 1 -- 1 or 0
-vim.g["gruvbox_material_cursor"] = "aqua" --'auto', 'red', 'orange', 'yellow', 'green', 'aqua', 'blue', 'purple'
-vim.g["gruvbox_material_foreground"] = "material" -- "mix", "material", "original"
+-- "soft", "medium", "hard"
+vim.g["gruvbox_material_background"] = "hard"
+
+-- "mix", "material", "original"
+vim.g["gruvbox_material_foreground"] = "material"
 
 -- to activate one theme comment "vim.cmd.colorscheme" of current theme and uncomment "vim.cmd.colorscheme" of theme what you want
 
@@ -36,8 +37,8 @@ return {
 		priotity = 1000,
 		config = function()
 			require("tokyonight").setup({ style = "night" })
-			-- 	vim.cmd.colorscheme("tokyonight")
 			-- 	-- "moon", "storm" or "night"
+			-- 	vim.cmd.colorscheme("tokyonight")
 		end,
 	},
 }
