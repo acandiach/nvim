@@ -9,6 +9,7 @@ return {
 		"onsails/lspkind.nvim",
 		"rafamadriz/friendly-snippets",
 	},
+	event = "VeryLazy",
 	config = function()
 		require("abel.completition")
 	end,
