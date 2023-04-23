@@ -13,13 +13,13 @@ return {
 			theme = "onedark",
 			component_separators = "",
 			section_separators = { left = "", right = "" },
-			-- section_separators = { left = "", right = "" },
+			section_separators = { left = "", right = "" },
 
 			-- section_separators = { left = "", right = "" },
 			--component_separators = { left = '', right = '' }
 
 			--component_separators = { left = '', right = ''},
-			--section_separators = { left = '', right = ''},
+			-- section_separators = { left = "", right = "" },
 
 			disabled_filetypes = { "NvimTree", "undotree", "diff" },
 			always_divide_middle = true,

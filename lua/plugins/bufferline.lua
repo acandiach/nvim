@@ -7,7 +7,7 @@ return {
 			separator = true,
 			color_icons = true,
 			show_buffer_icons = true,
-			separator_style = "", -- "slant", "slope", "paded_slant", "thick", "thin"
+			separator_style = "slope", -- "slant", "slope", "paded_slant", "thick", "thin"
 			right_mouse_command = "bdelete! %d",
 			left_mouse_command = "buffer %d",
 		},
