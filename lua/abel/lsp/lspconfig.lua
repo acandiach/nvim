@@ -79,56 +79,27 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
--- configure html server
-lspconfig["html"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
+local servers = {
+	"tsserver",
+	"html",
+	"emmet_ls",
+	"pyright",
+	"cssls",
+	"ruby_ls",
+	"solargraph",
+	"rust_analyzer",
+	-- 'typescript',
+}
 
--- configure typescript server with plugin
--- typescript.setup({
--- 	server = {
--- 		capabilities = capabilities,
--- 		on_attach = on_attach,
--- 	},
--- })
-
--- configure css server
-lspconfig["cssls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- configure tailwindcss server
--- lspconfig["tailwindcss"].setup({
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
--- })
-
--- configure emmet language server
-lspconfig["emmet_ls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "erb" },
-})
-
--- configure python server
-lspconfig["pyright"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- configure ruby server
-lspconfig["ruby_ls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- configure rails server
-lspconfig["solargraph"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
+for _, lsp in ipairs(servers) do
+	lspconfig[lsp].setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		flags = {
+			debounce_text_changes = 150,
+		},
+	})
+end
 
 -- configure lua server (with special settings)
 lspconfig["lua_ls"].setup({
