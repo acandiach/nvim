@@ -25,12 +25,12 @@ mason_lspconfig.setup({
 		"tsserver",
 		"html",
 		"cssls",
-		"ruby_ls",
 		"lua_ls",
+		"solargraph",
 		"emmet_ls",
 		"pyright",
 		"rust_analyzer",
-		"solargraph",
+		-- 'typescript',
 	},
 	-- auto-install configured servers (with lspconfig)
 	automatic_installation = true, -- not the same as ensure_installed

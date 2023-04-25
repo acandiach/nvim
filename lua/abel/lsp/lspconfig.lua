@@ -79,28 +79,52 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
-local servers = {
-	"tsserver",
-	"html",
-	"emmet_ls",
-	"pyright",
-	"cssls",
-	"ruby_ls",
-	"solargraph",
-	"rust_analyzer",
-	-- 'typescript',
-}
+local util = require("lspconfig/util")
 
-for _, lsp in ipairs(servers) do
-	lspconfig[lsp].setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-		flags = {
-			debounce_text_changes = 150,
+lspconfig.tsserver.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+lspconfig.html.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+lspconfig.cssls.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+lspconfig.emmet_ls.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+lspconfig.solargraph.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+lspconfig.pyright.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+-- configure rust server (with special settings)
+lspconfig.rust_analyzer.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "rust" },
+	root_dir = util.root_pattern("Cargo.toml"),
+	settings = {
+		["rust_analyzer"] = {
+			cargo = {
+				allFeatures = true,
+			},
 		},
-	})
-end
-
+	},
+})
 -- configure lua server (with special settings)
 lspconfig["lua_ls"].setup({
 	capabilities = capabilities,
