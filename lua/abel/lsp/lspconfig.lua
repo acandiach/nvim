@@ -81,34 +81,42 @@ end
 
 local util = require("lspconfig/util")
 
-lspconfig.tsserver.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
+local servers = {
+	"tsserver",
+	"html",
+	"emmet_ls",
+	"pyright",
+	"cssls",
+	"ruby_ls",
+	"lua_ls",
+	"rust_analyzer",
+	-- "typescript"
+}
 
-lspconfig.html.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
-lspconfig.cssls.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
-lspconfig.emmet_ls.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
-lspconfig.solargraph.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
+for _, lsp in ipairs(servers) do
+	lspconfig[lsp].setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		flags = {
+			debounce_text_changes = 150,
+		},
+	})
+end
 
 lspconfig.pyright.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+	flags = {
+		debounce_text_changes = 150,
+	},
+})
+
+lspconfig.ruby_ls.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = {
+		debounce_text_changes = 150,
+	},
 })
 
 -- configure rust server (with special settings)
@@ -118,7 +126,7 @@ lspconfig.rust_analyzer.setup({
 	filetypes = { "rust" },
 	root_dir = util.root_pattern("Cargo.toml"),
 	settings = {
-		["rust_analyzer"] = {
+		["rust-analyzer"] = {
 			cargo = {
 				allFeatures = true,
 			},
@@ -145,3 +153,11 @@ lspconfig["lua_ls"].setup({
 		},
 	},
 })
+
+-- configure typescript server with plugin
+-- typescript.setup({
+--   server = {
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--   },
+-- })

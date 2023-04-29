@@ -26,7 +26,7 @@ mason_lspconfig.setup({
 		"html",
 		"cssls",
 		"lua_ls",
-		"solargraph",
+		"ruby_ls",
 		"emmet_ls",
 		"pyright",
 		"rust_analyzer",
