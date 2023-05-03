@@ -1,6 +1,5 @@
 return {
 	"nvim-lua/plenary.nvim",
-	"tpope/vim-surround",
 
 	{
 		"windwp/nvim-autopairs",
